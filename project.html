@@ -10,29 +10,34 @@
             <h1>の部分はジャンルを選べるようにしたい。
         -->
         <h1>ーグルメ情報検索ー</h1>
-        <h3>居酒屋</h3>
+        <form>
+            <label>ジャンル:
+                <input name="genre" autocomplete="name">
+            </label>
+            <button>検索</button>
+        </form>
         <table>
             <tr>
                 <!--
                     店舗名は表じゃなく身だしみたいにして目立たせるといいかも
                 -->
                 <td>店舗名</td>
-                <td>name</td>
+                <td>佐々木製麺所</td>
                 
             </tr>
             <tr>
                 <!--最寄駅とかも一緒に入れる-->
                 <td>アクセス情報</td>
-                <td>access</td>
+                <td>西荻窪駅から845m</td>
             </tr>
             <tr>
                <td>住所</td>
-               <td>address</td>
+               <td>東京都杉並区西荻窪北4-26-1</td>
                 
             </tr>
             <tr>
                 <td>予算</td>
-                <td>budget.name</td>
+                <td>￥1,000～￥1,999</td>
                 
             </tr>
             <tr>
@@ -42,7 +47,7 @@
             <tr>
                 <!--ラーメンなら豚骨など少し細かいジャンルを書く-->
                 <td>ジャンル</td>
-                <td>genre.name</td>
+                <td>ラーメン、油そば・まぜそば、つけ麺</td>
                 
             </tr>
             <tr>
