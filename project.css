@@ -1,0 +1,14 @@
+h1{
+    text-align: center;
+    background:radial-gradient(rgb(241, 236, 236),#cacaca) ;
+}
+form{
+    text-align: center;
+}
+div#subete{
+    display:block;
+    max-block-size: 200;
+    margin-right: auto;
+     margin-left: auto;
+    
+}
