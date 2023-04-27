@@ -1,27 +1,40 @@
 p {
-	color: navy;
+	color: #dfdfdf;
 }
 
-p.info {
-	font-size: 10pt;
+p.info {/*一番上の文*/
+	font-size: small;
+	background-color: #dfdfdf;
 }
 
-h1 {
-	background-color: #7f7fcf;
+h1 {/*タイトル部分*/
+	background-color: white;
+	color: white;
+	text-shadow: navy;
 }
 
-h2 {
+h2 {/*身だし文字など*/
 	border: solid 1px black;
+	font-family:cursive;
+	color:#3f3faf;
+	background:linear-gradient(white,#ffefaf);
 	margin: 5px;
 }
 
 div#zentai {
-	display: flex;
-	flex-direction: row;
-	width: 1024px;
+	display: grid;
+	/*flex-direction: row;*/
+	grid-template-columns: 1fr 1fr;
+	grid-auto-rows: 200px;
+	grid-gap:10px;
+	width:500px;
+
 }
 
 div#zentai > div {
-	margin-left: 5px;
+	margin-left: 0px;
 	background-color: #ffefaf;
+}
+img.sign{
+	float: right;
 }
