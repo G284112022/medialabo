@@ -15,10 +15,10 @@ h1 {/*タイトル部分*/
 }
 
 h2 {/*身だし文字など*/
-	border: solid 1px black;
+	/*border: solid 1px;*/
 	font-family:cursive;
 	color:#3f3faf;
-	background:linear-gradient(white,#ffefaf);
+	background:linear-gradient(to left,white,#ffefaf);
 	margin: 5px;
 }
 
