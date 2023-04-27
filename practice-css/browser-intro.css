@@ -1,5 +1,6 @@
 p {
-	color: #dfdfdf;
+	background-color: #dfdfdf;
+	color: rgb(37, 54, 203);
 }
 
 p.info {/*一番上の文*/
