@@ -1,11 +1,12 @@
 p {
-	background-color: #dfdfdf;
+	background-color: white;
 	color: rgb(37, 54, 203);
 }
 
 p.info {/*一番上の文*/
 	font-size: small;
-	background-color: white;
+	background-color: #dfdfdf;
+	
 }
 
 h1 {/*タイトル部分*/
