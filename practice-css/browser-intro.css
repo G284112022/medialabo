@@ -1,6 +1,5 @@
-p {
-	background-color: white;
-	color: rgb(37, 54, 203);
+p {/*透明*/
+	color: navy;
 }
 
 p.info {/*一番上の文*/
@@ -27,15 +26,17 @@ div#zentai {
 	display: grid;
 	/*flex-direction: row;*/
 	grid-template-columns: 1fr 1fr;
-	grid-auto-rows: auto;
+	grid-auto-rows: 200px;
 	grid-gap:10px;
 	width:auto;
-
+	background-color: white;
+	padding:5px;
 }
 
 div#zentai > div {
-	margin-left: 0px;
+	/*margin-left: 0px;*/
 	background-color: #ffefaf;
+	
 }
 img.sign{
 	float: right;
