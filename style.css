@@ -1,0 +1,28 @@
+p{
+
+}
+h1{
+    background:linear-gradient(to right,white,rgb(195, 195, 252)) ;
+    color:aqua
+}
+h2#zikken{
+    text-align: center;
+}
+h3{
+    text-align: center;
+    background:radial-gradient(rgb(241, 236, 236),#12bcd6) ;
+}
+div#subete{
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	grid-auto-rows: 300px;
+	grid-gap:10px;
+	width:200;
+	background-color: white;
+	padding:5px;
+}
+div#subete > div {
+	/*margin-left: 0px;*/
+	background-color: #12bcd6;
+	padding:5px;
+}
