@@ -15,4 +15,16 @@ let gakka = [
 ];
 
 //////////////// ここから下にプログラムを書きたそう!
+console.log(campus.address);
+for(let n of campus.buildingD){
+	console.log(n);
+}
+for(let n of gakka){//nには
+					//{name: "機械システム工学科", ename: "Department of Mechanical Systems Engineering"}
+					//が代入されている。最初は
+	console.log(n.name);
+}
+
+	
+
 
