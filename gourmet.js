@@ -203,5 +203,12 @@ let data = {
 /////////// 課題3-2 ここからプログラムを書こう
 for(let n of data.results.shop){
   console.log(n.name);
-}
+}//コンソール部分
 
+let sho = document.querySelector('ul#shoping'); 
+//入力ちゅう
+for(let v of data.results.shop){
+  let li = document.createElement('li');
+    li.textContent = v.name;
+    sho.insertAdjacentElement('beforeend',li);
+}
