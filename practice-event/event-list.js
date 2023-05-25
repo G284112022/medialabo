@@ -45,7 +45,7 @@ function changeColor(event) {
 	let b = Math.floor(Math.random() * 256);
 	// 色のプロパティ値を作る
 	let color = 'rgb(' + r + ',' + g + ',' + b + ')';
-
+	//イベントを引数にすることでイベントが発生したdivのみに渡している。
 	let div = event.target;
 	div.style.backgroundColor = color;
 }
