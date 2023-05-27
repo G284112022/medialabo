@@ -35,6 +35,7 @@ let data = {
           "code": "G001",
           "name": "居酒屋"
         },
+        //別の店
         "horigotatsu": "なし",
         "id": "J000989843",
         "karaoke": "あり",
@@ -128,7 +129,7 @@ let data = {
         "free_food": "あり ：★NEW OPEN★当店イチ押しのコース★2.5h飲み放題付き「Funny Classicコース」4980円→2980円",
         "genre": {
           "catch": "八王子 個室居酒屋 飲み放題 肉バル 女子会",
-          "code": "G001",
+          "code": "G001",//"genre"code
           "name": "居酒屋"
         },
         "horigotatsu": "なし ：温かな照明と開放的な店内で楽しくご宴会♪八王子での宴会 飲み会 女子会 二次会 合コンに◎",
@@ -204,11 +205,43 @@ let data = {
 for(let n of data.results.shop){
   console.log(n.name);
 }//コンソール部分
+let b=document.querySelector('button#btn'); //ボタンを押した？
+b.addEventListener('click', showSelectResult); //ボタンを押したら起こすこと
+//指定したジャンルを調べる
+function showSelectResult() {
+  let s = document.querySelector('select#janru');
+  let idx = s.selectedIndex;  // idx 番目の option が選択された
 
-let sho = document.querySelector('ul#shoping'); 
-//入力ちゅう
-for(let v of data.results.shop){
-  let li = document.createElement('li');
-    li.textContent = v.name;
-    sho.insertAdjacentElement('beforeend',li);
+  let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
+  let o = os.item(idx);       // os の idx 番目の要素
+
+  console.log(data.results.shop[0].name);//０個目のshopのnameを出力している。
+  console.log('選択された ' + idx + ' 番目の option の情報:');
+  console.log('  value=' + o.getAttribute('value'));  // id 属性を表示
+  console.log('  textContent='+o.textContent);
+  
+  //何を指定したかを見てそれに応じた情報を出す。
+  
+    console.log('  textContent='+o.textContent);
+
+    let sho = document.querySelector('ul#shoping'); 
+    let x = idx-1;
+   // for(let v of data.results.shop){
+      let li = document.createElement('li');
+      let li2 = document.createElement('li');
+        li.textContent = data.results.shop[x].name;
+        
+        sho.insertAdjacentElement('beforeend',li);
+        li2.textContent = data.results.shop[x].genre.catch;
+        sho.insertAdjacentElement('beforeend',li2);
+ // } 
+  
+
+
+
+//let gcode = document.querySelectorAll()
+//入力ちゅう//"genre"code=ジャンルコード
+
+
+    
 }
