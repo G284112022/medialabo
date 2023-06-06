@@ -127,7 +127,7 @@ function finish() {
    let mark = document.querySelector('p#mark');
    let divs = document.createElement('div');
    divs.id='All';
-
+   //div要素をp要素に挿入
    divs.insertAdjacentElement('beforeend',mark);
 
    for(let All=0;All<obleng;All++){
@@ -238,7 +238,7 @@ function finish() {
 //   }
 //   rmtable.remove();
 // }
-
+//削除するコマンド
 function Tbremove(){
 
   let rmdiv = document.querySelector('div#All');
