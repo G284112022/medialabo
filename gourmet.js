@@ -100,9 +100,6 @@ function showResult(resp) {
 
     // data をコンソールに出力
     console.log(data);
-
-    // data.x を出力
-    console.log(data.results.shop.genre.catch);
 }
 
 // 通信エラーが発生した時の処理
@@ -125,17 +122,17 @@ function finish() {
    
    count=count+1;
    let mark = document.querySelector('p#mark');
-   let divs = document.createElement('div');
-   divs.id='All';
+   let div = document.createElement('div');
+   div.id='All';
    //div要素をp要素に挿入
-   divs.insertAdjacentElement('beforeend',mark);
+   mark.insertAdjacentElement('beforeend',div);
 
    for(let All=0;All<obleng;All++){
     console.log(All);
 
 
 
-    let div = document.querySelector('div#All');
+    //let div = document.querySelector('div#All');
     let oj;
     console.log(oj);
      oj = document.createElement('table');
@@ -202,42 +199,12 @@ function finish() {
       var tr = document.createElement("tr");
       table.appendChild(tr);
     }
-    var container = document.getElementById("tableContainer");
-    container.appendChild(table);
-    //let tableId = "table#oj"+tablenunber;
-    //let sho = document.querySelectorALL(); ここでテーブルの指定をしていた（多分）
-    var name=document.getElementById("name");
-   name.innerText = omise[tablenunber].name;
-
-   var name=document.getElementById("access");
-   name.innerText = omise[tablenunber].access;
-   var name=document.getElementById("budget.name");
-   name.innerText = omise[tablenunber].budget.name;
-   }*/
+   */
    
 }
 //ここまでアジャックス。
 
 
-// function Tbremove(){
-//   let rmtable = document.querySelector('table');
-//   let rmtr = rmtable.querySelector('tr');
-//   let rmtd = rmtr.querySelectorAll('td');
-//   let rmth = rmtr.querySelectorAll('th');
-//   console.log(rmtd+'rmの中身');
-//   for(let rmi1 =0;rmi1< rmth.length;rmi1++){
-//     rmth[rmi1].remove();
-//   }
-
-//   for(let rmi =0; rmi<rmtd.length;rmi++){
-//     console.log(rmi+'rm');
-//     rmtd[rmi].remove();
-//   }
-//   for(let rmi2 =0; rmi2<rmtr.length;rmi2++){
-//     rmth[rmi2].remove();
-//   }
-//   rmtable.remove();
-// }
 //削除するコマンド
 function Tbremove(){
 
