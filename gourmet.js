@@ -1,9 +1,10 @@
 let data ;
-let genre;
+let genre =0;
 let omise = [];
 let ob=0;
 let obleng=0;
-
+let count = 0;//何回実行したか２以上なら処理に影響はなくなる
+//let rm = document.querySelector('ul#shoping');
 
 //コンソール部分
 let b=document.querySelector('button#btn'); //ボタンを押した？
@@ -14,6 +15,7 @@ function showSelectResult() {
   let idx = s.selectedIndex;  // idx 番目の option が選択された
  
 console.log(idx);
+//rm.remove();
 
   //let os = s.querySelectorAll('option');  // s の子要素 option をすべて検索
   if(idx<10){
@@ -22,6 +24,10 @@ console.log(idx);
   else{
     genre = 'G0'+idx;
   }
+  if(count!=0){
+    Tbremove();
+  }
+ 
   sendRequest();
 
 
@@ -117,8 +123,17 @@ function finish() {
     console.log(omise[j]);
    } 
    
+   count=count+1;
+   let mark = document.querySelector('p#mark');
+   let divs = document.createElement('div');
+   divs.id='All';
+
+   divs.insertAdjacentElement('beforeend',mark);
+
    for(let All=0;All<obleng;All++){
     console.log(All);
+
+
 
     let div = document.querySelector('div#All');
     let oj;
@@ -127,8 +142,24 @@ function finish() {
      let tableid='oj'+All;//ここでidの数値を決めている。
      oj.id=tableid;//ここでidを指定している
 
-     var tbtr = document.createElement("tr");
+     if(All==0){
+      var tbth = document.createElement("tr");
+      oj.insertAdjacentElement('beforeend',tbth);
+      var th = document.createElement("th");
+      var th2 = document.createElement("th");
+      var th3 = document.createElement("th");
+      th.textContent = "店名";
+      tbth.insertAdjacentElement('beforeend',th);
+      th2.textContent = "予算";
+      tbth.insertAdjacentElement('beforeend',th2);
+      th3.textContent = "アクセス";
+      tbth.insertAdjacentElement('beforeend',th3);
+    }
+
+     var tbtr = document.createElement("tr");//tdを入れるtrを生成
      oj.insertAdjacentElement('beforeend',tbtr);
+    
+    
 
      var name = document.createElement("td");
      name.id='name';
@@ -155,7 +186,8 @@ function finish() {
       tr = document.querySelector('tr#access');
      access.textContent = data.results.shop[All].access;
   }
-   
+ 
+
   /* for(let tablenunber=1;tablenunber<obleng;tablenunber++){
 
     var table = document.createElement("table");
@@ -165,7 +197,7 @@ function finish() {
     for(var i = 0; i<headers.length;i++){
       var th = document.createElement("th");
       th.id = headers[i];
-      th.textContent = "--";
+      
 
       var tr = document.createElement("tr");
       table.appendChild(tr);
@@ -185,3 +217,65 @@ function finish() {
    
 }
 //ここまでアジャックス。
+
+
+// function Tbremove(){
+//   let rmtable = document.querySelector('table');
+//   let rmtr = rmtable.querySelector('tr');
+//   let rmtd = rmtr.querySelectorAll('td');
+//   let rmth = rmtr.querySelectorAll('th');
+//   console.log(rmtd+'rmの中身');
+//   for(let rmi1 =0;rmi1< rmth.length;rmi1++){
+//     rmth[rmi1].remove();
+//   }
+
+//   for(let rmi =0; rmi<rmtd.length;rmi++){
+//     console.log(rmi+'rm');
+//     rmtd[rmi].remove();
+//   }
+//   for(let rmi2 =0; rmi2<rmtr.length;rmi2++){
+//     rmth[rmi2].remove();
+//   }
+//   rmtable.remove();
+// }
+
+function Tbremove(){
+
+  let rmdiv = document.querySelector('div#All');
+
+  let rmtables = document.getElementsByName('table');
+
+  for(let d = rmtables.length-1;d>=0;d++){
+    let rmtable=rmtables[d];
+
+  
+
+    let rmtrs = rmtable.getElementsByTagName('tr');
+    
+    
+
+    for(let i = rmtrs.length-1;i >=0; i--){
+      let rmtr = rmtrs[i];
+
+      let rmths = rmtr.getElementsByTagName('th');
+      for(let rmj = rmths.length -1; rmj >= 0; rmj--){
+        let rmth = rmths[rmj];
+        rmth.parentNode.removeChild(rmth);//thを削除
+      }
+
+      let rmtds = rmtable.getElementsByTagName('td');
+      for(let rmj = rmtds.length -1;rmj >=0; rmj--){
+        let rmtd = rmtds[rmj];
+        rmtd.parentNode.removeChild(rmtd);
+
+       
+      }
+
+    
+      rmtr.parentNode.removeChild(rmtr);
+    }
+    rmtable.parentNode.removeChild(rmtable);
+  }
+  rmdiv.parentNode.removeChild(rmdiv);
+  
+}
