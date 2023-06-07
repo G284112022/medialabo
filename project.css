@@ -28,10 +28,14 @@ button{
 table{
     margin:auto;
     border-color: white;
+    margin: 10px;
+    
 }
 td{
    width: 300px;
    height: 100px;
+   margin: 10px;
+  
 }
 td#budget{
     width: 100px;
