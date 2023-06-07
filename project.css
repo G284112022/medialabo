@@ -1,6 +1,9 @@
 h1{
     text-align: center;
-    background:radial-gradient(rgb(241, 236, 236),#cacaca) ;
+    background:radial-gradient(rgb(241, 236, 236),#708f68) ;
+}
+body{
+    background-color: #cfdbcc;
 }
 form{
     text-align: center;
@@ -12,6 +15,60 @@ div#subete{
      margin-left: auto;
     
 }
+select{
+    display: block;
+    margin: auto;
+    width: 100;
+}
+button{
+    display: block;
+    margin: auto;
+    width: 70;
+}
+table{
+    margin:auto;
+    border-color: white;
+}
 td{
    width: 300px;
+   height: 100px;
+}
+td#budget{
+    width: 100px;
+   
+}
+td#access{
+    width:240px;
+   
+}
+td#name{
+    width: 250px;
+}
+td#genrename{
+    width: 100px;
+    text-align: center;
+}	
+
+table#oj1{
+    background-color: #dccdd9;
+}
+table#oj3{
+    background-color: #dccdd9;
+}
+table#oj5{
+    background-color: #dccdd9;
+}
+table#oj7{
+    background-color: #dccdd9;
+}
+table#oj9{
+    background-color: #dccdd9;
+}
+table#oj11{
+    background-color: #dccdd9;
+}
+div#All{
+    text-align: center;
+  
+ 
 }

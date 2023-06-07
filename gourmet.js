@@ -126,7 +126,9 @@ function finish() {
    div.id='All';
    //div要素をp要素に挿入
    mark.insertAdjacentElement('beforeend',div);
-
+   if(obleng==0){
+    div.textContent ='近くにこのジャンルのお店はありません。'
+   }
    for(let All=0;All<obleng;All++){
     console.log(All);
 
@@ -134,23 +136,33 @@ function finish() {
 
     //let div = document.querySelector('div#All');
     let oj;
-    console.log(oj);
+    //console.log(oj);
      oj = document.createElement('table');
      let tableid='oj'+All;//ここでidの数値を決めている。
      oj.id=tableid;//ここでidを指定している
-
+    
+     //見出しを作っている。
      if(All==0){
       var tbth = document.createElement("tr");
       oj.insertAdjacentElement('beforeend',tbth);
       var th = document.createElement("th");
       var th2 = document.createElement("th");
       var th3 = document.createElement("th");
+      var th4 = document.createElement("th");
+      var th5 = document.createElement("th");
+      var th6 = document.createElement("th");
       th.textContent = "店名";
       tbth.insertAdjacentElement('beforeend',th);
       th2.textContent = "予算";
       tbth.insertAdjacentElement('beforeend',th2);
       th3.textContent = "アクセス";
       tbth.insertAdjacentElement('beforeend',th3);
+      th4.textContent = "キャッチコピー";
+      tbth.insertAdjacentElement('beforeend',th4);
+      th5.textContent = "営業日時";
+      tbth.insertAdjacentElement('beforeend',th5);
+      th6.textContent = "ジャンル";
+      tbth.insertAdjacentElement('beforeend',th6);
     }
 
      var tbtr = document.createElement("tr");//tdを入れるtrを生成
@@ -163,13 +175,8 @@ function finish() {
      tbtr.insertAdjacentElement('beforeend',name);
     
      let tr = document.querySelector('tr#name');//trはテーブルの内容
-     name.textContent = data.results.shop[All].name//nameをid(name)のtrに書き込んでる
-    
-
-    // on.insertAdjacentElement('beforeend',)
-     
+     name.textContent = data.results.shop[All].name//nameをid(name)のtrに書き込んでる 
 //thも入れていくようにする。あとtrにもidをつけて何を入れるかの指標にすること。id指定で入れるものを決められる。
-
      var budget = document.createElement("td");
      budget.id='budget';
      tbtr.insertAdjacentElement('beforeend',budget);
@@ -182,6 +189,27 @@ function finish() {
      div.insertAdjacentElement('beforeend',oj);
       tr = document.querySelector('tr#access');
      access.textContent = data.results.shop[All].access;
+
+     var catch1 = document.createElement("td");
+     catch1.id='catch';
+     tbtr.insertAdjacentElement('beforeend',catch1);
+      tr = document.querySelector('tr#catch');
+      catch1.textContent = data.results.shop[All].catch;
+
+      var open = document.createElement("td");
+      open.id='open';
+     tbtr.insertAdjacentElement('beforeend',open);
+      tr = document.querySelector('tr#open');
+      open.textContent = data.results.shop[All].open;
+
+      var genrename = document.createElement("td");
+      genrename.id='genrename';
+     tbtr.insertAdjacentElement('beforeend',genrename	);
+      tr = document.querySelector('tr#open');
+      genrename.textContent = data.results.shop[All].genre.name;
+
+
+
   }
  
 
